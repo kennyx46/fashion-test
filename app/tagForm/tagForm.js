@@ -36,7 +36,7 @@ angular.module('myApp.tagForm', ['ngRoute'])
 
         if (photo) {
           photo.searchTag = vm.searchTag
-          photo.userId = photo.owner
+          photo.userId = vm.userId
           photo.views = parseInt(photo.views)
           vm.searchResults.push(photo)
         } else {
@@ -50,7 +50,10 @@ angular.module('myApp.tagForm', ['ngRoute'])
   vm.showDetails = function (item) {
     $location.path('/tags')
       .search("tags", item.searchTag)
-      .search("userId", item.owner)
+
+      if (item.userId) {
+        $location.search("userId", item.owner)
+      }
   }
 
 }]);
