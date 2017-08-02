@@ -1,0 +1,15 @@
+<div class="search-results panel-group">
+  <div class="panel panel-info full-image-item" ng-click="$ctrl.showDetails({item:item})"
+    ng-repeat="item in $ctrl.searchResults | orderBy:$ctrl.selectedSort">
+    <div class="panel-heading">
+      {{item.searchTag}}
+    </div>
+    <div class="panel-body">
+      <p>By {{item.owner}}</p>
+      <img ng-src="{{item.url_q}}" alt="">
+      <p class="datetaken">Taken: {{item.datetaken}}</p>
+      <p class="dateupload">Uploaded: {{item.dateupload}}</p>
+    </div>
+    <div class="panel-footer">Views: {{item.views}}</div>
+  </div>
+</div>

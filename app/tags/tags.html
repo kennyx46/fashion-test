@@ -2,8 +2,4 @@
   <div class="well photo-item" ng-repeat="photo in $ctrl.photos">
     <img ng-src="{{photo.url_q}}" alt="">
   </div>
-  <ul class="pagination">
-    <li ng-repeat="page in $ctrl.pages" ng-class="{active: (page === $ctrl.currentPage)}">
-    <a href="#">{{page}}</a></li>
-  </ul>
 </div>

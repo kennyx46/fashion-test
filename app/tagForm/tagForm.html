@@ -1,5 +1,8 @@
 <div id="page1 container-fluid">
   <div class="row">
+    <div ng-show="$ctrl.showWarning" class="alert alert-warning">
+      No data matching your query
+    </div>
     <form action="" ng-submit="$ctrl.submit()" name="$ctrl.tagForm">
       <div class="form-group">
           <label for="searchTag">Tag</label>
@@ -12,50 +15,18 @@
           ng-model="$ctrl.userId">
       </div>
       <button type="submit" class="btn btn-primary" >Submit</button>
-      <button type="cancel" class="btn btn-default">Cancel</button>
+      <button type="cancel" class="btn btn-default" ng-click="$ctrl.clearForm()">Cancel</button>
     </form>
 
-    <div class="sorting-group">
-      <p>Sort by</p>
-      <div class="radio">
-        <label>
-          <input type="radio" ng-model="$ctrl.selectedSort" value="views" checked>
-          Views
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" ng-model="$ctrl.selectedSort" value="owner">
-          Owner
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" ng-model="$ctrl.selectedSort" value="datetaken">
-          Date taken
-        </label>
-      </div>
-      <div class="radio">
-        <label>
-          <input type="radio" ng-model="$ctrl.selectedSort" value="dateupload">
-          Date uploaded
-        </label>
-      </div>
-    </div>
+    <br>
 
-    <div class="search-results panel-group">
-      <div class="panel panel-info" ng-click="$ctrl.showDetails(item)" ng-repeat="item in $ctrl.searchResults | orderBy:$ctrl.selectedSort">
-        <div class="panel-heading">
-          {{item.searchTag}}
-        </div>
-        <div class="panel-body">
-          <p>By {{item.owner}}</p>
-          <img ng-src="{{item.url_q}}" alt="">
-          <p>Taken: {{item.datetaken}}</p>
-          <p>Uploaded: {{item.dateupload}}</p>
-        </div>
-        <div class="panel-footer">Views: {{item.views}}</div>
-      </div>
-    </div>
+    <sorting-group on-change="$ctrl.onChange(val)">
+    </sorting-group>
+
+    <search-results-group
+      show-details="$ctrl.showDetails(item)"
+      search-results="$ctrl.searchResults"
+      selected-sort="$ctrl.selectedSort"></search-results-group>
+
   </div>
 </div>

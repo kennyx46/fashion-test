@@ -1,0 +1,27 @@
+<div class="sorting-group">
+  <p>Sort by</p>
+  <div class="radio">
+    <label>
+      <input type="radio" ng-model="$ctrl.selectedSort" ng-change="$ctrl.onRadioChange()" value="views" checked>
+      Views
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" ng-model="$ctrl.selectedSort" ng-change="$ctrl.onRadioChange()" value="owner">
+      Owner
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" ng-model="$ctrl.selectedSort" ng-change="$ctrl.onRadioChange()" value="datetaken">
+      Date taken
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" ng-model="$ctrl.selectedSort" ng-change="$ctrl.onRadioChange()" value="dateupload">
+      Date uploaded
+    </label>
+  </div>
+</div>

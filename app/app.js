@@ -7,7 +7,8 @@ angular.module('myApp', [
   'myApp.tagForm',
   'myApp.tags',
   'myApp.services',
-  'myApp.version'
+  'myApp.version',
+  'myApp.components'
 ]).
 config(['$locationProvider', '$routeProvider', function($locationProvider, $routeProvider) {
   $locationProvider.hashPrefix('!');

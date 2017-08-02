@@ -37,3 +37,18 @@ body {
   display: inline-block;
   margin-right: 15px;
 }
+
+.full-image-item {
+  display: inline-block;
+  margin-right: 15px;
+  text-align: center
+}
+
+.full-image-item .datetaken {
+  margin-top: 10px;
+  text-align: left;
+}
+
+.full-image-item .dateupload {
+  text-align: left;
+}

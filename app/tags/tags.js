@@ -20,12 +20,10 @@ angular.module('myApp.tags', ['ngRoute'])
   function init() {
     var params = $location.search()
     params.perPage = 100
+
     FlickrService.searchImages(params)
       .then(function (res) {
-        console.log(res.data)
         vm.photos = res.data.photos.photo
-        vm.pages = Array(res.data.photos.pages).fill()
-          .map(function (v,i) { return i + 1 });
       })
   }
 
