@@ -1,5 +1,10 @@
 /* app css stylesheet */
 
+body {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
 .menu {
   list-style: none;
   border-bottom: 0.1em solid black;
@@ -22,4 +27,13 @@
 .menu > li + li:before {
   content: "|";
   padding-right: 0.3em;
+}
+
+.photos-list {
+  text-align: center;
+}
+
+.photo-item {
+  display: inline-block;
+  margin-right: 15px;
 }

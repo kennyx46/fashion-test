@@ -4,10 +4,6 @@ angular.module('myApp.services', [])
 
 .factory('FlickrService', ["$http", function($http) {
 
-  function getFlickr() {
-    console.log("Got flickr!")
-  }
-
   function searchImages(options) {
     var params = {
       method: 'flickr.photos.search',
@@ -18,7 +14,7 @@ angular.module('myApp.services', [])
       // api_sig: '1df4daca7963508c63b71e0a909e5c6f',
       tags: options.tags,
       user_id: options.userId,
-      per_page: 1,
+      per_page: options.perPage || 1,
       extras: 'date_upload, date_taken, owner_name, views, url_q',
       sort: 'interestingness-desc'
     }
@@ -31,7 +27,6 @@ angular.module('myApp.services', [])
   }
 
   return {
-    getFlickr: getFlickr,
     searchImages: searchImages
   }
 
